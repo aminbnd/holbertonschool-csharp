@@ -8,11 +8,12 @@ namespace _5_print_comb
         {
             for (int i = 0; i < 100; i++)
             {
-                string number = i.ToString("d2");
+                //string separator = ", ";
+                //string number = i.ToString("d2");
                 if (i < 99)
-                    Console.Write($"{number}, ");
+                    Console.Write($"{i:d2}, ");
                 else
-                    Console.Write(number);
+                    Console.Write(i);
             }
         }
     }
