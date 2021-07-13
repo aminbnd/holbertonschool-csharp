@@ -11,7 +11,7 @@ namespace _5_print_comb
                 string separator = ", ";
                 
                 if (i == 99) separator = "\n";
-                    System.Console.Write($"{i:d2}{separator}");
+                System.Console.Write($"{i:d2}{separator}");
                 
             }
         }
