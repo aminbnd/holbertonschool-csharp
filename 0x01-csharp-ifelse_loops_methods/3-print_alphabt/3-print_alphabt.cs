@@ -9,7 +9,9 @@ namespace _3_print_alphabt
             for(int i = 91; i < 123; i++)
             {
                 if (i != 101 && i != 113)
+                {
                     Console.Write((char)i);
+                }
             }
         }
     }
