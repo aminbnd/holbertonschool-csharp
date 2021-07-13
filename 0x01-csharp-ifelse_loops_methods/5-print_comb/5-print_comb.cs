@@ -10,7 +10,7 @@ namespace _5_print_comb
             {
                 string separator = ", ";
                 //string number = i.ToString("d2");
-                if (i < 99) separator = "\n";
+                if (i = 99) separator = "\n";
                     Console.Write($"{i:d2}, ");
                 
             }
