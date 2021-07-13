@@ -6,9 +6,9 @@ namespace _3_print_alphabt
     {
         static void Main(string[] args)
         {
-            for(int i = 'a'; i < 'z'; i++)
+            for(int i = 91; i < 123; i++)
             {
-                if (i != 'e' && i != 'q')
+                if (i != 101 && i != 113)
                     Console.Write((char)i);
             }
         }
