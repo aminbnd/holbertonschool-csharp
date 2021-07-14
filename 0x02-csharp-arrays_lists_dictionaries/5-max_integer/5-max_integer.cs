@@ -12,16 +12,12 @@ class List
         }
 
 		int selectedValue = 0;
-		for (int i = 0; i < myList.Count - 1; i++)
+		for (int i = 0; i < myList.Count; i++)
         {
 			if (myList[i] > selectedValue)
 			{
 				selectedValue = myList[i];
             }
-			//else
-   //         {
-			//	selectedValue = myList[i];
-   //         }
         }
 		return selectedValue;
 	}
