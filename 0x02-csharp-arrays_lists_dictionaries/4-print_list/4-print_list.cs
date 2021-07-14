@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+
 
 class List
 {
-	public static List<int> CreatePrint(int size)
+	public static System.Collections.Generic.List<int> CreatePrint(int size)
 	{
 		if (size < 0)
 		{
@@ -11,7 +11,7 @@ class List
 			return null;
 		}
 
-		var newList = new List<int>();
+		var newList = new System.Collections.Generic.List<int>();
 		char separator = ' ';
 		for (int i = 0; i < size; i++)
         {
