@@ -11,7 +11,7 @@ class List
 			return -1;
         }
 
-		int selectedValue = 0;
+		int selectedValue = -2147483648;
 		for (int i = 0; i < myList.Count; i++)
         {
 			if (myList[i] > selectedValue)
