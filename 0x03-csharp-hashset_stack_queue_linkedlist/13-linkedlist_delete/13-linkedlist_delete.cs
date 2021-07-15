@@ -12,7 +12,7 @@ class LList
 			myLList.Remove(val);
 		}
 
-		catch (System.Exception)
+		catch (Exception)
 		{ }
 	}
 }
