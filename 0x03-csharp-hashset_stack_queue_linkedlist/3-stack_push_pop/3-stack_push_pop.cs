@@ -19,7 +19,7 @@ class MyStack
 
 		bool conditionResult = aStack.Contains(search);
 		
-		Console.WriteLine($"Stack contains {search}: {conditionResult}");
+		Console.WriteLine($"Stack contains \"{search}\": {conditionResult}");
 		while (aStack.Contains(search))
 		{
 			aStack.Pop();
