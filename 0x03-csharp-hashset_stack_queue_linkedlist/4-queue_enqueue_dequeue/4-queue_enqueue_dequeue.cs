@@ -15,17 +15,19 @@ class MyQueue
 			Console.WriteLine("Queue is empty");
 		else
 			Console.WriteLine($"Top item: {aQueue.Peek()}");
-
+		
+		aQueue.Enqueue(newItem);
 
 		bool conditionResult = aQueue.Contains(search);
 
 		Console.WriteLine($"Queue contains \"{search}\": {conditionResult}");
 
+		
 		while (aQueue.Contains(search))
 		{
 			aQueue.Dequeue();
 		}
-		aQueue.Enqueue(newItem);
+		
 		return aQueue;
 	}
 }
