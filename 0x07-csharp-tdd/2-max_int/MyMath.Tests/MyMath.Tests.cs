@@ -1,31 +1,37 @@
-using System;
+using NUnit.Framework;
 using System.Collections.Generic;
-namespace MyMath
+
+namespace MyMath.Tests
 {
-    /// <summary>Operations class conrains one methode Max().</summary>
-    public class Operations
+    public class Tests
     {
-        /// <summary>A method that returns the max integer in a list of integers.</summary>
-        /// <param name="nums">A list of integers.</param>
-        /// <return>The Maximum number in the list nums.</return>
-        public static int Max(List<int> nums)
+        [Test]
+        public static void positiveNumbers()
         {
-            int max = int.MinValue;
-            if(nums.Count > 0)
-            {
-                foreach(var item in nums)
-                {
-                    if(item > max)
-                    {
-                        max = item;
-                    }
-                }
-                return max;
-            }
-            else
-            {
-                return 0;
-            }
+            List<int> list1 = new List<int>() { 0, 1, 2, 3, 4, 5 };
+            Assert.AreEqual(MyMath.Operations.Max(list1), 5);
         }
+
+        [Test]
+        public static void negativeNumbers()
+        {
+            List<int> list2 = new List<int>() { -5, -4, -3, -2, -1 };
+            Assert.AreEqual(MyMath.Operations.Max(list2), -1);
+        }
+
+        [Test]
+        public static void randomList()
+        {
+            List<int> list3 = new List<int>() { 89, -101, 27, -300, 46, 57 };
+            Assert.AreEqual(MyMath.Operations.Max(list3), 89);
+        }
+
+        [Test]
+        public static void emplyList()
+        {
+            List<int> list4 = new List<int>();
+            Assert.AreEqual(MyMath.Operations.Max(list4), 0);
+        }
+      
     }
 }
