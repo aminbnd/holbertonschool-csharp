@@ -1,48 +1,27 @@
-using NUnit.Framework;
+using System;
 using System.Collections.Generic;
-
-namespace MyMath.Tests
+namespace MyMath
 {
-    [TestFixture]
-    public class Tests
+    /// <summary>Operations class conrains one methode Max().</summary>
+    public class Operations
     {
-
-        [Test]
-        public static void emptyList()
+        /// <summary>A method that returns the max integer in a list of integers.</summary>
+        /// <param name="nums">A list of integers.</param>
+        /// <return>The Maximum number in the list nums.</return>
+        public static int Max(List<int> nums)
         {
-            int expectedResult = 0;
-            int result = MyMath.Operations.Max(new List<int>());
-            Assert.AreEqual(expectedResult, result);
-        }
-
-        [Test]
-        public static void regularArrayPositiveNumbers()
-        {
-            var input = new List<int>();
-            input.Add(0);
-            input.Add(1);
-            input.Add(2);
-            input.Add(3);
-            input.Add(4);
-            input.Add(5);
-
-            int result = MyMath.Operations.Max(input);
-            Assert.AreEqual(5, result);
-        }
-
-        [Test]
-        public static void regularArrayNegativeNumbers()
-        {
-            var input = new List<int>() { -5, -4, -3, -2 };
-            int result = MyMath.Operations.Max(input);
-            Assert.AreEqual(-2, result);
-        }
-        [Test]
-        public static void randomArray()
-        {
-            var input = new List<int>() { -50, 40, 89, -100 };
-            int result = MyMath.Operations.Max(input);
-            Assert.AreEqual(89, result);
+            int max = int.MinValue;
+            if (nums.Count > 0)
+            {
+                foreach (var item in nums)
+                {
+                    if (max < item)
+                        max = item;
+                }
+                return max;
+            }
+            else
+                return 0;
         }
     }
 }
