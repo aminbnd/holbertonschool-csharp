@@ -18,7 +18,7 @@ namespace MyMath
             int max = int.MinValue;
             if(nums.Count > 0)
             {
-                foreach(int element in nums)
+                foreach(var element in nums)
                 {
                     if (max < element)
                         max = element;
