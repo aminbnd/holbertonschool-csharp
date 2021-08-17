@@ -25,7 +25,10 @@ namespace MyMath
                 }
                 return max;
             }
-            return 0;
+            else
+            {
+                return 0;
+            }
         }
     }
 }
