@@ -11,17 +11,21 @@ namespace MyMath
         public static int Max(List<int> nums)
         {
             int max = int.MinValue;
-            if (nums.Count > 0)
+            if(nums.Count > 0)
             {
-                foreach (var item in nums)
+                foreach(var item in nums)
                 {
-                    if (max < item)
+                    if(item > max)
+                    {
                         max = item;
+                    }
                 }
                 return max;
             }
             else
+            {
                 return 0;
+            }
         }
     }
 }
