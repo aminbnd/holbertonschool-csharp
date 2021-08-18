@@ -1,13 +1,13 @@
 ﻿using System;
 /// <summary>
-/// Shape: Class
+/// Shape class contains one method Area().
 /// </summary>
 class Shape
 {
     /// <summary>
-    /// Throws exception
+    /// Throws an NotImplementedException with the message Area() is not implemented.
     /// </summary>
-    /// <returns>Int</returns>
+    /// <returns></returns>
     public virtual int Area()
     {
         throw new NotImplementedException("Area() is not implemented");
@@ -15,14 +15,14 @@ class Shape
 }
 
 /// <summary>
-/// Rectangle: Class that inherit from Shape
+///  Class Rectangle that inherits from Shape.
 /// </summary>
 class Rectangle : Shape
 {
     private int width;
     private int height;
     /// <summary>
-    /// Property: width stter and getter
+    /// width setter and getter.
     /// </summary>
     public int Width
     {
@@ -32,13 +32,14 @@ class Rectangle : Shape
         }
         set
         {
-            if (value < 0) throw new ArgumentException("Width must be greater than or equal to 0");
+            if (value < 0)
+                throw new ArgumentException("Width must be greater than or equal to 0");
             width = value;
         }
     }
 
     /// <summary>
-    /// Property: height setter and getter
+    /// height setter and getter.
     /// </summary>
     public int Height
     {
@@ -48,22 +49,23 @@ class Rectangle : Shape
         }
         set
         {
-            if (value < 0) throw new ArgumentException("Height must be greater than or equal to 0");
+            if (value < 0)
+                throw new ArgumentException("Height must be greater than or equal to 0");
             height = value;
         }
     }
 
     /// <summary>
-    /// Returns the Area of a rectangle
+    /// returns the area of the rectangle
     /// </summary>
-    /// <returns>Integer: area of the rectangle</returns>
+    /// <returns></returns>
     public new int Area()
     {
         return (this.height * this.width);
     }
 
     /// <summary>
-    /// Returns the area of the rectangle in a formatted string
+    /// returns the area of the rectangle
     /// </summary>
     /// <returns></returns>
     public override string ToString()
@@ -72,9 +74,6 @@ class Rectangle : Shape
     }
 }
 
-/// <summary>
-/// Rectangle: Class
-/// </summary>
 class Square : Rectangle
 {
     private int size;
