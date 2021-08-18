@@ -29,7 +29,8 @@ class Rectangle : Shape
         }
         set
         {
-            if (value < 0) throw new ArgumentException("Width must be greater than or equal to 0");
+            if (value < 0)
+                throw new ArgumentException("Width must be greater than or equal to 0");
             width = value;
         }
     }
@@ -45,7 +46,8 @@ class Rectangle : Shape
         }
         set
         {
-            if (value < 0) throw new ArgumentException("Height must be greater than or equal to 0");
+            if (value < 0)
+                throw new ArgumentException("Height must be greater than or equal to 0");
             height = value;
         }
     }
@@ -58,7 +60,10 @@ class Rectangle : Shape
     {
         return (this.height * this.width);
     }
-
+    /// <summary>
+    /// Overrides ToString()
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         return $"[Rectangle] {this.width} / {this.height}";
