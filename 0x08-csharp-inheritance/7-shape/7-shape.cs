@@ -5,21 +5,25 @@
 /// </summary>
 class Shape
 {
-	public virtual int Area()
+    /// <summary>
+    /// Throws an NotImplementedException with the message Area() is not implemented.
+    /// </summary>
+    /// <returns></returns>
+    public virtual int Area()
     {
         throw new NotImplementedException("Area() is not implemented");
     }
 }
 
 /// <summary>
-/// Rectangle: Class that inherit from Shape
+///  Class Rectangle that inherits from Shape.
 /// </summary>
 class Rectangle : Shape
 {
     private int width;
     private int height;
     /// <summary>
-    /// Property: width stter and getter
+    /// width setter and getter.
     /// </summary>
     public int Width
     {
@@ -36,7 +40,7 @@ class Rectangle : Shape
     }
 
     /// <summary>
-    /// Property: height setter and getter
+    /// height setter and getter.
     /// </summary>
     public int Height
     {
@@ -53,15 +57,16 @@ class Rectangle : Shape
     }
 
     /// <summary>
-    /// Returns the Area of a rectangle
+    /// returns the area of the rectangle
     /// </summary>
-    /// <returns>Integer: area of the rectangle</returns>
+    /// <returns></returns>
     public new int Area()
     {
         return (this.height * this.width);
     }
+
     /// <summary>
-    /// Overrides ToString()
+    /// returns the area of the rectangle in a formated string
     /// </summary>
     /// <returns></returns>
     public override string ToString()
