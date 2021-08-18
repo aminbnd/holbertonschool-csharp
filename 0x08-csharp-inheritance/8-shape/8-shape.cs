@@ -68,6 +68,9 @@ class Rectangle : Shape
 class Square : Rectangle
 {
     private int size;
+    /// <summary>
+    /// Size getter and setter
+    /// </summary>
     public int Size
     {
         get
