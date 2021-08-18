@@ -97,7 +97,10 @@ class Square : Rectangle
         }
     }
 
-
+    /// <summary>
+    /// Returns a square area in a formated string
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         return $"[Square] {this.size} / {this.size}";
