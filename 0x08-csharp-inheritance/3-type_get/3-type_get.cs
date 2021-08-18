@@ -10,17 +10,18 @@ class Obj
 	public static void Print(object myObj)
     {
         PropertyInfo[] props = myObj.GetType().GetProperties();
-        MethodInfo[] meth = myObj.GetType().GetMethods();
+        MethodInfo[] meths = myObj.GetType().GetMethods();
 
         Console.WriteLine($"{myObj.GetType().Name} Properties:");
-        foreach(var prop in props)
+        foreach (var prop in props)
         {
             Console.WriteLine(prop.Name);
         }
-        Console.WriteLine($"{myObj.GetType().Name} Properties:");
-        foreach(var me in meth)
+
+        Console.WriteLine($"{myObj.GetType().Name} Methods:");
+        foreach (var meth in meths)
         {
-            Console.WriteLine(me.Name);
+            Console.WriteLine(meth.Name);
         }
     }
 }
