@@ -56,6 +56,10 @@ class Rectangle : Shape
         return (this.height * this.width);
     }
 
+    /// <summary>
+    /// Returns the area of the rectangle in a formatted string
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         return $"[Rectangle] {this.width} / {this.height}";
@@ -63,13 +67,13 @@ class Rectangle : Shape
 }
 
 /// <summary>
-/// Square: Class That inherit from Rectangle
+/// Rectangle: Class
 /// </summary>
 class Square : Rectangle
 {
     private int size;
     /// <summary>
-    /// Size getter and setter
+    /// Size: getter and setter
     /// </summary>
     public int Size
     {
