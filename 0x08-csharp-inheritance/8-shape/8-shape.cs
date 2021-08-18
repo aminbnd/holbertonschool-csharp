@@ -1,7 +1,13 @@
 ﻿using System;
-
+/// <summary>
+/// Shape: Class
+/// </summary>
 class Shape
 {
+    /// <summary>
+    /// Throws exception
+    /// </summary>
+    /// <returns></returns>
     public virtual int Area()
     {
         throw new NotImplementedException("Area() is not implemented");
