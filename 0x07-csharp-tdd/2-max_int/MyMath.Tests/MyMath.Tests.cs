@@ -6,32 +6,47 @@ namespace MyMath.Tests
     public class Tests
     {
         [Test]
-        public static void positiveNumbers()
+        public void Max_ListOfMixedIntegers_ReturnsMaximumNumber()
         {
-            List<int> list1 = new List<int>() { 0, 1, 2, 3, 4, 5 };
-            Assert.AreEqual(MyMath.Operations.Max(list1), 5);
+            List<int> l = new List<int>();
+            l.Add(-22);
+            l.Add(0);
+            l.Add(-100);
+            l.Add(10);
+            l.Add(99);
+            l.Add(-2);
+            l.Add(-42);
+            l.Add(-1);
+            Assert.AreEqual(MyMath.Operations.Max(l), 99);
         }
 
         [Test]
-        public static void negativeNumbers()
+        public void Max_ListOfPositiveIntegers_ReturnsMaximumNumber()
         {
-            List<int> list2 = new List<int>() { -5, -4, -3, -2, -1 };
-            Assert.AreEqual(MyMath.Operations.Max(list2), -1);
+            List<int> l = new List<int>();
+            l.Add(0);
+            l.Add(10);
+            l.Add(99);
+            Assert.AreEqual(MyMath.Operations.Max(l), 99);
         }
 
         [Test]
-        public static void randomList()
+        public void Max_ListOfNegativeIntegers_ReturnsMaximumNumber()
         {
-            List<int> list3 = new List<int>() { 89, -101, 27, -300, 46, 57 };
-            Assert.AreEqual(MyMath.Operations.Max(list3), 89);
+            List<int> l = new List<int>();
+            l.Add(-1);
+            l.Add(-10);
+            l.Add(-99);
+            Assert.AreEqual(MyMath.Operations.Max(l), -1);
         }
 
+
         [Test]
-        public static void emplyList()
+        public void Max_EmptyList_ReturnsZero()
         {
-            List<int> list4 = new List<int>();
-            Assert.AreEqual(MyMath.Operations.Max(list4), 0);
+            List<int> l = new List<int>();
+            Assert.AreEqual(MyMath.Operations.Max(l), 0);
         }
-      
+
     }
 }
