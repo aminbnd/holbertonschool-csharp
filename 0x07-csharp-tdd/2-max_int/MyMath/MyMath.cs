@@ -15,20 +15,18 @@ namespace MyMath
         /// <returns>Integer: the max integer</returns>
         public static int Max(List<int> nums)
         {
-            if(nums.Count == 0)
+            int max = int.MinValue;
+            if (nums.Count > 0)
             {
-                return 0;
-            }
-            
-            int max = nums[0];
-            foreach(var element in nums)
-            {
-                if (max < element)
+                foreach (var item in nums)
                 {
-                    max = element;
+                    if (max < item)
+                        max = item;
                 }
+                return max;
             }
-            return max;
+            else
+                return 0;
         }
     }
 }
