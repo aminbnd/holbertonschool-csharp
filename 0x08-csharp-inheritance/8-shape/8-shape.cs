@@ -7,7 +7,7 @@ class Shape
     /// <summary>
     /// Throws exception
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Int</returns>
     public virtual int Area()
     {
         throw new NotImplementedException("Area() is not implemented");
@@ -78,8 +78,9 @@ class Rectangle : Shape
 class Square : Rectangle
 {
     private int size;
+
     /// <summary>
-    /// Size: getter and setter
+    /// size setter and getter.
     /// </summary>
     public int Size
     {
@@ -89,7 +90,8 @@ class Square : Rectangle
         }
         set
         {
-            if (value < 0) throw new ArgumentException("Size must be greater than or equal to 0");
+            if (value < 0)
+                throw new ArgumentException("Size must be greater than or equal to 0");
             size = value;
             this.Width = value;
             this.Height = value;
