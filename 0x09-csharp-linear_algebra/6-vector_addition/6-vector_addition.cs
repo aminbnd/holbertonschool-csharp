@@ -19,7 +19,7 @@ public class VectorMath
             return new double[]{ -1 };
 
 
-        double[] sum = new double[lenVector1];
+        double[] sum = new double[3];
 
         for (int i = 0; i < lenVector1; i++)
         {
