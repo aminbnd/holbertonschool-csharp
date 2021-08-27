@@ -19,13 +19,12 @@ public class VectorMath
             return new double[]{ -1 };
 
 
-        double[] sum = new double[3];
+        double[] sum = new double[lenVector1];
 
         for (int i = 0; i < lenVector1; i++)
         {
             sum[i] = vector1[i] + vector2[i];
         }
-        Console.WriteLine(sum);
         return sum;
     }
 }
