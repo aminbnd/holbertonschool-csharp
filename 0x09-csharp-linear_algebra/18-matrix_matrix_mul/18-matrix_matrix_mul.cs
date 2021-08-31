@@ -5,6 +5,12 @@ using System;
 /// </summary>
 class MatrixMath
 {
+    /// <summary>
+    /// Multiplies two matrices of doubles
+    /// </summary>
+    /// <param name="matrix1">First matrix of doubles</param>
+    /// <param name="matrix2">Second matrice of doubles</param>
+    /// <returns>New matrix of doubles: the resulting matrix</returns>
     public static double[,] Multiply(double[,] matrix1, double[,] matrix2)
     {
         // Check if matrices are multipliable
