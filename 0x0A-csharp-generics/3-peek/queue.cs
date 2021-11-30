@@ -62,6 +62,10 @@ public class Queue<T>
 		return temp.value;
 	}
 
+	/// <summary>
+    /// Peek: method that returns the first node of the queue
+    /// </summary>
+    /// <returns></returns>
 	public T Peek()
     {
 		if(count == 0)
