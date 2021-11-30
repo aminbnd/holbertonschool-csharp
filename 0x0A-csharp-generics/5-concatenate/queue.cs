@@ -96,6 +96,10 @@ public class Queue<T>
 		}
 	}
 
+	/// <summary>
+	/// Concatenate: method that  that concatenates all values in the queue only if the queue is of type String or Char.
+	/// </summary>
+	/// <returns></returns>
 	public string Concatenate()
     {
 		if (typeof(T) == typeof(string) || typeof(T) == typeof(char))
