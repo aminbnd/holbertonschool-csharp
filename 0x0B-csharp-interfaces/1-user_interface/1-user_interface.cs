@@ -14,6 +14,9 @@ public interface IInteractive
 /// </summary>
 public interface IBreakable
 {
+    /// <summary>
+    /// durability: property
+    /// </summary>
     int durability { get; set; }
     /// <summary>
     /// Break(): method
@@ -26,6 +29,9 @@ public interface IBreakable
 /// </summary>
 public interface ICollectable
 {
+    /// <summary>
+    /// isCollected: property
+    /// </summary>
     bool isCollected { get; set; }
 
     /// <summary>
