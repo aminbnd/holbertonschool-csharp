@@ -167,6 +167,9 @@ public class Key : Base, ICollectable
     /// </summary>
     public bool isCollected { get; set; }
 
+    /// <summary>
+    /// Implement Collect()
+    /// </summary>
     public void Collect()
     {
         if(isCollected == false)
