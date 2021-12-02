@@ -28,14 +28,15 @@ public class Player
 	/// <param name="maxHp">float</param>
 	public Player(string name = "Player", float maxHp = 100f)
     {
+		this.name = name;
 		if(maxHp <= 0)
         {
 			this.maxHp = 100f;
 			Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         }
-		this.name = name;
-		this.maxHp = maxHp;
-		hp = maxHp;
+		else
+			this.maxHp = maxHp;
+		hp = this.maxHp;
     }
 
 	/// <summary>
