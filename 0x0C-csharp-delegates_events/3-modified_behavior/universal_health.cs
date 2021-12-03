@@ -120,16 +120,16 @@ public class Player
         {
 			case Modifier.Weak:
 				return baseValue * 0.5f;
-				break;
+			break;
 			case Modifier.Base:
 				return baseValue;
-				break;
+			break;
 			case Modifier.Strong:
 				return baseValue * 1.5f;
-				break;
+			break;
 			default:
 				return default(float);
-
+			break;
         }
     }
 }
