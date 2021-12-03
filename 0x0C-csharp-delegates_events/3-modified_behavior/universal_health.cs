@@ -108,6 +108,12 @@ public class Player
 		ValidateHP(newHpValue);
 	}
 
+	/// <summary>
+	/// ApplyModifier
+	/// </summary>
+	/// <param name="baseValue">float</param>
+	/// <param name="modifier">Modifier</param>
+	/// <returns></returns>
 	public float ApplyModifier(float baseValue, Modifier modifier)
     {
 		switch(modifier)
