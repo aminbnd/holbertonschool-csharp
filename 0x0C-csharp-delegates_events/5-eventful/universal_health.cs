@@ -7,15 +7,15 @@ public class Player
 {
     /// Player's name.
     private string name;
-    /// Player's maximum health
+    /// Player's maximum health points.
     private float maxHp;
-    /// Player's current health
+    /// Player's current health points.
     private float hp;
     /// Player's status.
     private string status;
 
     /// <summary>
-    /// constructor.
+    /// Player's class constructor.
     /// </summary>
     /// <param name="name">Player's name</param>
     /// <param name="maxHp">Player's maximum health points.</param>
@@ -35,7 +35,7 @@ public class Player
     }
 
     /// <summary>
-    /// method that prints player's current health.
+    /// Print's player's current health.
     /// </summary>
     public void PrintHealth()
     {
@@ -49,7 +49,7 @@ public class Player
     public delegate void CalculateHealth(float amount);
 
     /// <summary>
-    /// Method that prints a message when player takes damage.
+    /// Prints a message when player takes damage.
     /// </summary>
     /// <param name="damage">Damage amount.</param>
     public void TakeDamage(float damage)
@@ -69,7 +69,7 @@ public class Player
     }
 
     /// <summary>
-    /// method that prints a message when player heals damage.
+    /// Prints a message when player heals damage.
     /// </summary>
     /// <param name="heal">Heal amount.</param>
     public void HealDamage(float heal)
@@ -89,7 +89,7 @@ public class Player
     }
 
     /// <summary>
-    ///  method that sets the new value of the Player’s hp
+    /// Sets the new value of the Player’s hp
     /// </summary>
     /// <param name="newHp">The new health points amount.</param>
     public void ValidateHP(float newHp)
@@ -105,7 +105,7 @@ public class Player
     }
 
     /// <summary>
-    /// method that applies a modifier to a value.
+    /// Applies a modifier to a value.
     /// </summary>
     /// <param name="baseValue"></param>
     /// <param name="modifier"></param>
@@ -131,7 +131,7 @@ public class Player
     public event EventHandler<CurrentHPArgs> HPCheck;
 
     /// <summary>
-    /// CheckStatus: method.
+    /// CheckStatus method.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">List of arguments.</param>
@@ -151,13 +151,13 @@ public class Player
     }
 
     /// <summary>
-    /// Method that prints a message when hp is low or zero.
+    /// HPValueWarning method that prints a message when hp is low or zero.
     /// </summary>
-    /// <param name="sender">object</param>
-    /// <param name="e">arguments</param>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">List of arguments.</param>
     private void HPValueWarning(object sender, CurrentHPArgs e)
     {
-        if(e.currentHp == 0)
+        if (e.currentHp == 0)
         {
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("Health has reached zero!");
@@ -171,9 +171,14 @@ public class Player
         }
     }
 
+    /// <summary>
+    /// Check if hp is low.
+    /// </summary>
+    /// <param name="e">List of arguments.</param>
     public void OnCheckStatus(CurrentHPArgs e)
     {
-        if (e.currentHp < maxHp / 4f) HPCheck += HPValueWarning;
+        if (e.currentHp < maxHp / 4f)
+            HPCheck += HPValueWarning;
         HPCheck(this, e);
     }
 }
@@ -206,19 +211,19 @@ public enum Modifier
 public delegate float CalculateModifier(float baseValue, Modifier modifier);
 
 /// <summary>
-/// CurrentHPArgs class that inherits from EventArgs.
+/// CurrentHPArgs class derived from EventArgs.
 /// </summary>
 public class CurrentHPArgs : EventArgs
 {
     /// <summary>
-    /// Player's current health.
+    /// Player's current health points.
     /// </summary>
     public readonly float currentHp;
 
     /// <summary>
-    /// constructor.
+    /// CurrentHPArgs constructor.
     /// </summary>
-    /// <param name="newHp">The new value of health.</param>
+    /// <param name="newHp">The new value of health points.</param>
     public CurrentHPArgs(float newHp)
     {
         currentHp = newHp;
