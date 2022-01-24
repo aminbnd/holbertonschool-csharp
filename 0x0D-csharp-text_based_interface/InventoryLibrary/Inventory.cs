@@ -38,7 +38,12 @@
 				_quantity = value;
 			}
 		}
-
+		/// <summary>
+		/// Inventory
+		/// </summary>
+		/// <param name="user">user</param>
+		/// <param name="item">item</param>
+		/// <param name="quantity">quantity</param>
 		public Inventory(User user, Item item, int quantity = 1)
 		{
 			user_id = user.id;
