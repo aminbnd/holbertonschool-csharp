@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace InventoryLibrary
+﻿namespace InventoryLibrary
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class User : BaseClass
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public string name { get; set; }
+	public class User : BaseClass
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        public User(string name)
-        {
-            this.name = name;
-        }
-    }
+	{
+		private string _name;
+
+		public string name
+		{
+			get { return _name; }
+			set
+			{
+				updatetime();
+				_name = value;
+			}
+		}
+
+		public User(string name) : base()
+		{
+			this.name = name;
+		}
+
+
+	}
 }

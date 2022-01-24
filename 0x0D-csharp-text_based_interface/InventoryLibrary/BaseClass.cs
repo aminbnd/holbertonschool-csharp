@@ -2,42 +2,51 @@
 
 namespace InventoryLibrary
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class BaseClass
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public string id { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime date_created { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime date_updated { get; set; }
+	public class BaseClass
+	{
+		private static int idCounter = 0;
+		public string id;
+		public DateTime date_created;
+		public DateTime date_updated;
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public BaseClass()
-        {
-            date_created = new DateTime();
-            date_updated = new DateTime();
-            id = generateId();
-        }
+		public BaseClass()
+		{
+			id = GenerateId();
+			date_created = new DateTime();
+			date_updated = new DateTime();
+		}
 
-        /// <summary>
-        /// Method that generates new Id
-        /// </summary>
-        /// <returns>string: generated Id</returns>
-        public string generateId()
-        {
-            id = Guid.NewGuid().ToString();
-            return id;
-        }
-    }
+		public virtual string GenerateId()
+		{
+			Guid uuid = Guid.NewGuid();
+
+			return uuid.ToString();
+		}
+
+		public virtual void updatetime()
+		{
+			date_updated = new DateTime();
+		}
+
+		public string GetAllClassAttributes()
+		{
+			string res = "{";
+			string sep = "";
+			foreach (var prop in GetType().GetProperties())
+			{
+				if (prop.GetValue(this, null)?.GetType() == typeof(String[]))
+				{
+				}
+				res += String.Join("", $"{sep}{prop.Name}: {prop.GetValue(this, null)}");
+				sep = ", ";
+			}
+			res += "}";
+			return res;
+		}
+
+		public override string ToString()
+		{
+			return $"{{{id}: {GetAllClassAttributes()} }}";
+		}
+	}
 }

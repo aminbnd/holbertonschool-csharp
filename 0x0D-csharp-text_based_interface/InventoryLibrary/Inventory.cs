@@ -1,48 +1,49 @@
-﻿using System;
-
-namespace InventoryLibrary
+﻿namespace InventoryLibrary
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class Inventory : BaseClass
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public string user_id { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string item_id { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        private int _quantity = 1;
-        /// <summary>
-        /// 
-        /// </summary>
-        public int quantity
-        {
-            get { return _quantity; }
-            set
-            {
-                _quantity = Math.Clamp(value, 0, int.MaxValue);
-            }
-        }
+	public class Inventory : BaseClass
+	{
+		private string _user_id;
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="user_id"></param>
-        /// <param name="item_id"></param>
-        /// <param name="quantity"></param>
+		public string user_id
+		{
+			get { return _user_id; }
+			set
+			{
+				updatetime();
+				_user_id = value;
+			}
+		}
 
-        public Inventory(string user_id, string item_id, int quantity)
-        {
-            this.user_id = base.id;
-            this.item_id = base.id;
-            this.quantity = quantity;
-        }
-    }
+		private string _item_id;
+
+		public string item_id
+		{
+			get { return _item_id; }
+			set
+			{
+				updatetime();
+				_item_id = value;
+			}
+		}
+
+		private int _quantity;
+
+		public int quantity
+		{
+			get { return _quantity; }
+			set
+			{
+				updatetime();
+				if (value < 0) value = 0;
+				_quantity = value;
+			}
+		}
+
+		public Inventory(User user, Item item, int quantity = 1)
+		{
+			user_id = user.id;
+			item_id = item.id;
+			this.quantity = quantity;
+		}
+	}
 }

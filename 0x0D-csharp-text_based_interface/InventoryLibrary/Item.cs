@@ -3,42 +3,60 @@ using System.Collections.Generic;
 
 namespace InventoryLibrary
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class Item : BaseClass
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public string name { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string description { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public float price { get; set; }
+	public class Item : BaseClass
+	{
+		private string _name;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        List<string> tags = new List<string>();
+		public string name
+		{
+			get { return _name; }
+			set
+			{
+				updatetime();
+				_name = value;
+			}
+		}
 
+		public string _descrption;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="price"></param>
-        /// <param name="tags"></param>
-        public Item(string name, string description, float price)
-        {
-            this.name = name;
-            this.description = description;
-            this.price = price;
-        }
-    }
+		public string descrption
+		{
+			get { return _descrption; }
+			set
+			{
+				updatetime();
+				_descrption = value;
+			}
+		}
+
+		private float _price;
+
+		public float price
+		{
+			get { return _price; }
+			set
+			{
+				updatetime();
+				_price = (float)Math.Round(value * 100) / 100f;
+			}
+		}
+
+		public List<string> _tags;
+
+		public List<string> tags
+		{
+			get { return _tags; }
+			set
+			{
+				updatetime();
+				_tags = value;
+			}
+		}
+
+		public Item(string name)
+		{
+			this.name = name;
+			tags = new List<string>();
+		}
+	}
 }
